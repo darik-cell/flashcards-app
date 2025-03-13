@@ -1,0 +1,31 @@
+type Card {
+    id: ID!
+    question: String!
+    answer: String!
+    createdAt: DateTime!
+    collection: Collection!
+    reviewHistory: [CardReviewHistory!]!
+}
+
+extend type Query {
+    allCards: [Card!]!
+    cardById(id: ID!): Card
+}
+
+extend type Mutation {
+    createCard(input: CardCreateInput!): Card!
+    updateCard(input: CardUpdateInput!): Card!
+    deleteCard(id: ID!): Boolean!
+}
+
+input CardCreateInput {
+    question: String!
+    answer: String!
+    collectionId: ID!
+}
+
+input CardUpdateInput {
+    id: ID!
+    question: String
+    answer: String
+}

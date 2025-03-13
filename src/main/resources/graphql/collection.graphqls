@@ -1,0 +1,27 @@
+type Collection {
+    id: ID!
+    name: String!
+    user: User!
+    cards: [Card!]!
+}
+
+extend type Query {
+    allCollections: [Collection!]!
+    collectionById(id: ID!): Collection
+}
+
+extend type Mutation {
+    createCollection(input: CollectionCreateInput!): Collection!
+    updateCollection(input: CollectionUpdateInput!): Collection!
+    deleteCollection(id: ID!): Boolean!
+}
+
+input CollectionCreateInput {
+    name: String!
+    userId: ID!
+}
+
+input CollectionUpdateInput {
+    id: ID!
+    name: String
+}

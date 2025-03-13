@@ -1,0 +1,39 @@
+type CardReviewHistory {
+    id: ID!
+    card: Card!
+    reviewDate: DateTime!
+    quality: Int!
+    repetitionCount: Int
+    intervalDays: Int
+    easeFactor: Float
+    nextReview: DateTime
+}
+
+extend type Query {
+    allCardReviewHistories: [CardReviewHistory!]!
+    cardReviewHistoryById(id: ID!): CardReviewHistory
+}
+
+extend type Mutation {
+    createCardReviewHistory(input: CardReviewHistoryCreateInput!): CardReviewHistory!
+    updateCardReviewHistory(input: CardReviewHistoryUpdateInput!): CardReviewHistory!
+    deleteCardReviewHistory(id: ID!): Boolean!
+}
+
+input CardReviewHistoryCreateInput {
+    cardId: ID!
+    quality: Int!
+    repetitionCount: Int
+    intervalDays: Int
+    easeFactor: Float
+    nextReview: DateTime
+}
+
+input CardReviewHistoryUpdateInput {
+    id: ID!
+    quality: Int
+    repetitionCount: Int
+    intervalDays: Int
+    easeFactor: Float
+    nextReview: DateTime
+}
