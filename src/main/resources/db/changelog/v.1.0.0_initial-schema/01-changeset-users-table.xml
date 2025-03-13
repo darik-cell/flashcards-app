@@ -9,11 +9,11 @@
         <sqlFile dbms="postgresql"
                  encoding="utf8"
                  relativeToChangelogFile="true"
-                 path="01-create-user-table.sql"
+                 path="01-create-users-table.sql"
                  splitStatements="true"
                  stripComments="true"/>
         <rollback>
-            <sqlFile path="01-drop-user-table.sql"
+            <sqlFile path="01-drop-users-table.sql"
                      dbms="postgresql"
                      encoding="utf8"
                      relativeToChangelogFile="true"

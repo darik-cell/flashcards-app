@@ -2,8 +2,10 @@ package com.myapp.flashcards.config;
 
 import com.myapp.flashcards.security.JwtAuthenticationFilter;
 import com.myapp.flashcards.security.CustomUserDetailsService;
+import graphql.scalars.ExtendedScalars;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.graphql.execution.RuntimeWiringConfigurer;
 import org.springframework.security.authentication.*;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.*;
@@ -27,6 +29,11 @@ public class SecurityConfig {
 
   @Autowired
   private CustomUserDetailsService userDetailsService;
+
+  @Bean
+  public RuntimeWiringConfigurer runtimeWiringConfigurer() {
+    return builder -> builder.scalar(ExtendedScalars.DateTime);
+  }
 
   @Bean
   public AuthenticationManager authenticationManager(

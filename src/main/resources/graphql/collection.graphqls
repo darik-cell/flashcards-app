@@ -3,6 +3,7 @@ type Collection {
     name: String!
     user: User!
     cards: [Card!]!
+    countCards: Int!
 }
 
 extend type Query {

@@ -9,11 +9,11 @@
         <sqlFile dbms="postgresql"
                  encoding="utf8"
                  relativeToChangelogFile="true"
-                 path="20-create-cards-table.sql"
+                 path="20-create-card-table.sql"
                  splitStatements="true"
                  stripComments="true"/>
         <rollback>
-            <sqlFile path="20-drop-cards-table.sql"
+            <sqlFile path="20-drop-card-table.sql"
                      dbms="postgresql"
                      encoding="utf8"
                      relativeToChangelogFile="true"

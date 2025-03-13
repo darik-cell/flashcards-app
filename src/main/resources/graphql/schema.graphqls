@@ -5,7 +5,6 @@ schema {
     mutation: Mutation
 }
 
-# Базовые типы-заглушки, которые будут расширяться в других файлах
 type Query {
     _empty: String
 }

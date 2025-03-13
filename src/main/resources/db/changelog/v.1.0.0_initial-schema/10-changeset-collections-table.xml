@@ -9,11 +9,11 @@
         <sqlFile dbms="postgresql"
                  encoding="utf8"
                  relativeToChangelogFile="true"
-                 path="10-create-collections-table.sql"
+                 path="10-create-collection-table.sql"
                  splitStatements="true"
                  stripComments="true"/>
         <rollback>
-            <sqlFile path="10-drop-collections-table.sql"
+            <sqlFile path="10-drop-collection-table.sql"
                      dbms="postgresql"
                      encoding="utf8"
                      relativeToChangelogFile="true"

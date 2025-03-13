@@ -18,6 +18,12 @@ extend type Mutation {
     createCardReviewHistory(input: CardReviewHistoryCreateInput!): CardReviewHistory!
     updateCardReviewHistory(input: CardReviewHistoryUpdateInput!): CardReviewHistory!
     deleteCardReviewHistory(id: ID!): Boolean!
+    reviewCard(input: ReviewCardInput!): CardReviewHistory!
+}
+
+input ReviewCardInput {
+    cardId: ID!
+    quality: Int!
 }
 
 input CardReviewHistoryCreateInput {
