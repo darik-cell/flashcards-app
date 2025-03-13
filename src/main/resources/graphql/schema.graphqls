@@ -1,0 +1,15 @@
+scalar DateTime
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+# Базовые типы-заглушки, которые будут расширяться в других файлах
+type Query {
+    _empty: String
+}
+
+type Mutation {
+    _empty: String
+}

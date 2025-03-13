@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flashcards_db
+    username: postgres
+    password: zisiqoP9
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:db.changelog-master.xml
+
+jwt:
+  secret: LMPpUV21EQFiqgqoMnLGNBhEsGDknJMGx5mHnwPlvOvCb0e2mjwvZASYE3YuZ9iypwerj7wPm8YUOFhP/85gew==
+  expirationMs: 86400000
